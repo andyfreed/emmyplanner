@@ -223,14 +223,14 @@ struct GradientCard<Content: View>: View {
             .padding()
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [startColor.opacity(0.15), endColor.opacity(0.15)]),
+                    gradient: Gradient(colors: [startColor.opacity(0.2), endColor.opacity(0.2)]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                .background(.ultraThinMaterial)
+                .background(AppTheme.cardBackground)
             )
             .cornerRadius(15)
-            .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 1)
+            .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
     }
 }
 

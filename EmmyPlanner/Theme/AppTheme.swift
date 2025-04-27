@@ -3,20 +3,20 @@ import SwiftUI
 // App-wide theme colors
 struct AppTheme {
     // Primary colors
-    static let primaryPink = Color(hex: "FF8AAA").opacity(0.85) // Softer pink with transparency
-    static let primaryBlue = Color(hex: "7EB6FF").opacity(0.8) // Softer blue with transparency
+    static let primaryPink = Color(hex: "FF8AAA").opacity(0.9) // Slightly more vibrant pink
+    static let primaryBlue = Color(hex: "7EB6FF").opacity(0.9) // Slightly more vibrant blue
     
     // Secondary/accent colors
-    static let accentPink = Color(hex: "FFC1D6").opacity(0.6) // Even lighter pink
+    static let accentPink = Color(hex: "FFC1D6").opacity(0.7) // Even lighter pink
     static let accentBlue = Color(hex: "C6E1FF").opacity(0.7) // Lighter blue
     
     // Background colors
-    static let backgroundPrimary = Color(hex: "FFFFFF").opacity(0.9) // Almost white background
-    static let backgroundSecondary = Color(hex: "F8FBFF").opacity(0.95) // Very subtle blue background
+    static let backgroundPrimary = Color(hex: "2E2E36").opacity(0.95) // Dark background with slight transparency
+    static let backgroundSecondary = Color(hex: "383844").opacity(0.95) // Slightly lighter dark background
     
     // Text colors
-    static let textPrimary = Color(hex: "444444") // Slightly softer dark gray
-    static let textSecondary = Color(hex: "888888") // Softer medium gray
+    static let textPrimary = Color(hex: "FFFFFF").opacity(0.95) // Near white text for dark background
+    static let textSecondary = Color(hex: "DDDDDD").opacity(0.8) // Light gray text
     
     // Utility colors
     static let success = Color.green.opacity(0.8)
@@ -35,6 +35,9 @@ struct AppTheme {
     static let unconfirmed = Color.gray.opacity(0.5)
     static let purchased = Color.green.opacity(0.8)
     static let unpurchased = Color.gray.opacity(0.5)
+    
+    // Card background
+    static let cardBackground = Color(hex: "454550").opacity(0.8) // Slightly lighter than background for cards
 }
 
 // Color extension to support hex colors

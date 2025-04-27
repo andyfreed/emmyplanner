@@ -47,7 +47,7 @@ struct PartyDetailsView: View {
                                     .padding(10)
                                     .background(
                                         Circle()
-                                            .fill(AppTheme.accentPink.opacity(0.2))
+                                            .fill(AppTheme.accentPink.opacity(0.3))
                                     )
                                 
                                 Image(systemName: "balloon.2.fill")
@@ -56,7 +56,7 @@ struct PartyDetailsView: View {
                                     .padding(10)
                                     .background(
                                         Circle()
-                                            .fill(AppTheme.accentPink.opacity(0.2))
+                                            .fill(AppTheme.accentPink.opacity(0.3))
                                     )
                                 
                                 Image(systemName: "birthday.cake.fill")
@@ -65,7 +65,7 @@ struct PartyDetailsView: View {
                                     .padding(10)
                                     .background(
                                         Circle()
-                                            .fill(AppTheme.accentPink.opacity(0.2))
+                                            .fill(AppTheme.accentPink.opacity(0.3))
                                     )
                             }
                             .padding(.top, 8)
@@ -73,8 +73,8 @@ struct PartyDetailsView: View {
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 15)
-                                .fill(.ultraThinMaterial)
-                                .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 1)
+                                .fill(AppTheme.cardBackground)
+                                .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 2)
                         )
                         
                         // Guest Stats
@@ -115,8 +115,8 @@ struct PartyDetailsView: View {
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 15)
-                                .fill(.ultraThinMaterial)
-                                .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 1)
+                                .fill(AppTheme.cardBackground)
+                                .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 2)
                         )
                     }
                     .padding()
