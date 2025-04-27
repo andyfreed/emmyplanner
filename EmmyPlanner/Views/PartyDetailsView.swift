@@ -21,10 +21,26 @@ struct PartyDetailsView: View {
                 }
                 
                 ScrollView {
-                    VStack(spacing: 18) {
-                        // Modern clean header
-                        VStack(spacing: 12) {
+                    VStack(spacing: 22) {
+                        // App Title and Date Header
+                        VStack(spacing: 16) {
+                            Text("Emmy's Birthday")
+                                .font(.system(size: 32, weight: .bold))
+                                .foregroundColor(AppTheme.primaryPink)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            
                             HStack {
+                                Image(systemName: "calendar")
+                                    .foregroundColor(AppTheme.primaryPink)
+                                
+                                Text("November 23rd, \(Calendar.current.component(.year, from: viewModel.party.date))")
+                                    .font(.title3)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(AppTheme.textPrimary)
+                            }
+                            .padding(.vertical, 8)
+                            
+                            HStack(spacing: 30) {
                                 Image(systemName: "gift.fill")
                                     .font(.system(size: 24))
                                     .foregroundColor(AppTheme.primaryPink)
@@ -34,12 +50,14 @@ struct PartyDetailsView: View {
                                             .fill(AppTheme.accentPink.opacity(0.2))
                                     )
                                 
-                                Text("Emmy's Birthday")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
+                                Image(systemName: "balloon.2.fill")
+                                    .font(.system(size: 24))
                                     .foregroundColor(AppTheme.primaryPink)
-                                
-                                Spacer()
+                                    .padding(10)
+                                    .background(
+                                        Circle()
+                                            .fill(AppTheme.accentPink.opacity(0.2))
+                                    )
                                 
                                 Image(systemName: "birthday.cake.fill")
                                     .font(.system(size: 24))
@@ -50,16 +68,7 @@ struct PartyDetailsView: View {
                                             .fill(AppTheme.accentPink.opacity(0.2))
                                     )
                             }
-                            
-                            Divider()
-                                .background(AppTheme.accentPink.opacity(0.4))
-                                .padding(.horizontal, 8)
-                            
-                            Text(dateFormatter.string(from: viewModel.party.date))
-                                .font(.headline)
-                                .foregroundColor(AppTheme.textSecondary)
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.bottom, 4)
+                            .padding(.top, 8)
                         }
                         .padding()
                         .background(
@@ -72,7 +81,7 @@ struct PartyDetailsView: View {
                         GradientCard {
                             VStack(spacing: 14) {
                                 HStack {
-                                    Text("Party Information")
+                                    Text("Party Details")
                                         .font(.headline)
                                         .foregroundColor(AppTheme.primaryPink)
                                     
@@ -83,30 +92,6 @@ struct PartyDetailsView: View {
                                 }
                                 
                                 TextField("Party Name", text: $viewModel.party.name)
-                                    .foregroundColor(AppTheme.textPrimary)
-                                    .padding()
-                                    .background(Color.white.opacity(0.7))
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(AppTheme.accentPink, lineWidth: 0.5)
-                                    )
-                                
-                                HStack {
-                                    Text("Date:")
-                                        .foregroundColor(AppTheme.textPrimary)
-                                    
-                                    Spacer()
-                                    
-                                    Text("November 23rd, \(Calendar.current.component(.year, from: viewModel.party.date))")
-                                        .foregroundColor(AppTheme.primaryPink)
-                                        .fontWeight(.medium)
-                                }
-                                .padding()
-                                .background(Color.white.opacity(0.7))
-                                .cornerRadius(10)
-                                
-                                TextField("Location", text: $viewModel.party.location)
                                     .foregroundColor(AppTheme.textPrimary)
                                     .padding()
                                     .background(Color.white.opacity(0.7))
