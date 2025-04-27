@@ -21,7 +21,7 @@ struct PartyDetailsView: View {
                 }
                 
                 ScrollView {
-                    VStack(spacing: 22) {
+                    VStack(spacing: 28) {
                         // App Title and Date Header
                         VStack(spacing: 16) {
                             Text("Emmy's Birthday")
@@ -74,70 +74,6 @@ struct PartyDetailsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 15)
                                 .fill(.ultraThinMaterial)
-                                .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 1)
-                        )
-                        
-                        // Party Info
-                        GradientCard {
-                            VStack(spacing: 14) {
-                                HStack {
-                                    Text("Party Details")
-                                        .font(.headline)
-                                        .foregroundColor(AppTheme.primaryPink)
-                                    
-                                    Spacer()
-                                    
-                                    SparkleView()
-                                        .frame(width: 35, height: 35)
-                                }
-                                
-                                TextField("Party Name", text: $viewModel.party.name)
-                                    .foregroundColor(AppTheme.textPrimary)
-                                    .padding()
-                                    .background(Color.white.opacity(0.7))
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(AppTheme.accentPink, lineWidth: 0.5)
-                                    )
-                            }
-                        }
-                        
-                        WavySeparator(color: AppTheme.accentPink)
-                            .frame(height: 15)
-                            .padding(.vertical, 5)
-                        
-                        // Notes
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Notes")
-                                .font(.headline)
-                                .foregroundColor(AppTheme.primaryPink)
-                            
-                            ZStack(alignment: .topLeading) {
-                                if viewModel.party.notes.isEmpty {
-                                    Text("Add any party notes here...")
-                                        .foregroundColor(AppTheme.textSecondary)
-                                        .padding(.top, 8)
-                                        .padding(.leading, 5)
-                                }
-                                
-                                TextEditor(text: $viewModel.party.notes)
-                                    .frame(minHeight: 100)
-                                    .foregroundColor(AppTheme.textPrimary)
-                                    .padding(5)
-                                    .background(Color.white.opacity(0.7))
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(AppTheme.accentPink, lineWidth: 0.5)
-                                    )
-                            }
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color.white.opacity(0.5))
-                                .background(.ultraThinMaterial)
                                 .shadow(color: Color.black.opacity(0.05), radius: 3, x: 0, y: 1)
                         )
                         
