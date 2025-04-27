@@ -11,6 +11,9 @@ import SwiftUI
 struct EmmyPlannerApp: App {
     @StateObject private var partyViewModel = PartyViewModel()
     
+    // Using Core Data persistence controller
+    let persistenceController = PersistenceController.shared
+    
     init() {
         // Configure the app's appearance
         configureAppAppearance()
@@ -37,6 +40,8 @@ struct EmmyPlannerApp: App {
                 .onAppear {
                     print("ContentView appeared")
                 }
+                // Make the persistence controller's view context available to child views
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
     

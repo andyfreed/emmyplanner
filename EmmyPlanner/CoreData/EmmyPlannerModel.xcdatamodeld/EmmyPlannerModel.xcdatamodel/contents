@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDGoodyBagItem" representedClassName="CDGoodyBagItem" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPurchased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantity" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="party" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDParty" inverseName="goodyBagItems" inverseEntity="CDParty"/>
+    </entity>
+    <entity name="CDGuest" representedClassName="CDGuest" syncable="YES" codeGenerationType="class">
+        <attribute name="contact" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isConfirmed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="notes" attributeType="String" defaultValueString=""/>
+        <relationship name="party" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDParty" inverseName="guests" inverseEntity="CDParty"/>
+    </entity>
+    <entity name="CDParty" representedClassName="CDParty" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="location" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="notes" attributeType="String"/>
+        <attribute name="theme" attributeType="String"/>
+        <relationship name="goodyBagItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDGoodyBagItem" inverseName="party" inverseEntity="CDGoodyBagItem"/>
+        <relationship name="guests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDGuest" inverseName="party" inverseEntity="CDGuest"/>
+    </entity>
+</model> 
