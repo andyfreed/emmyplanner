@@ -96,12 +96,14 @@ extension CDGuest {
 extension CDGoodyBagItem {
     // Convert Core Data goody bag item to regular GoodyBagItem model
     func toGoodyBagItem() -> GoodyBagItem {
+        let doublePrice: Double? = self.price != nil ? Double(truncating: self.price!) : nil
+        
         return GoodyBagItem(
             id: self.id ?? UUID(),
             name: self.name ?? "",
             quantity: Int(self.quantity),
             isPurchased: self.isPurchased,
-            price: self.price as Double?
+            price: doublePrice
         )
     }
     
@@ -111,7 +113,8 @@ extension CDGoodyBagItem {
         self.name = item.name
         self.quantity = Int32(item.quantity)
         self.isPurchased = item.isPurchased
-        self.price = item.price as NSNumber?
+        
+        self.price = item.price != nil ? NSNumber(value: item.price!) : nil
     }
     
     // Create a new CDGoodyBagItem from GoodyBagItem model
@@ -121,7 +124,9 @@ extension CDGoodyBagItem {
         cdItem.name = item.name
         cdItem.quantity = Int32(item.quantity)
         cdItem.isPurchased = item.isPurchased
-        cdItem.price = item.price as NSNumber?
+        
+        cdItem.price = item.price != nil ? NSNumber(value: item.price!) : nil
+        
         return cdItem
     }
 } 

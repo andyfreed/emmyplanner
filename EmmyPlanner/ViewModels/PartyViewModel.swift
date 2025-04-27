@@ -188,7 +188,7 @@ class PartyViewModel: ObservableObject {
             if let cdParty = self.cdParty,
                let cdItems = cdParty.goodyBagItems?.allObjects as? [CDGoodyBagItem],
                let cdItem = cdItems.first(where: { $0.id == item.id }) {
-                cdItem.price = price as NSNumber
+                cdItem.price = NSNumber(value: price)
                 saveContext()
             }
         }
