@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>EmmyPlanner.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>087271542DBE6552007F6785</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>087271612DBE6554007F6785</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0872716B2DBE6554007F6785</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EmmyPlanner</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EmmyPlannerTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EmmyPlannerUITests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
